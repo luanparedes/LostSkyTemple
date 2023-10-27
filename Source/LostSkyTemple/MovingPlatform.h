@@ -23,4 +23,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnywhere)
+	int32 NewValue = 120;
+
+	UPROPERTY(EditAnywhere)
+	bool isRunning = false;
+
+	UPROPERTY(EditAnywhere)
+	float PlayerTall = 1.84;
 };
