@@ -31,4 +31,13 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float PlayerTall = 1.84;
+
+	UPROPERTY(EditAnywhere)
+	float InputFloatA = 0;
+
+	UPROPERTY(EditAnywhere)
+	float InputFloatB = 0;
+
+	UPROPERTY(EditAnywhere)
+	float APlusBFloat = 0;
 };
