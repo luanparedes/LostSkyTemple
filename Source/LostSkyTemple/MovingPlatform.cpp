@@ -14,6 +14,11 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
+
+	InputFloatA = 3.14;
+	InputFloatB = 360.20;
+
+	APlusBFloat = InputFloatA + InputFloatB;
 }
 
 // Called every frame
