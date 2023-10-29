@@ -24,20 +24,14 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-	int32 NewValue = 120;
+	FVector MyVector = FVector();
 
 	UPROPERTY(EditAnywhere)
-	bool isRunning = false;
+	float X = 0;
 
 	UPROPERTY(EditAnywhere)
-	float PlayerTall = 1.84;
+	float Y = 0;
 
 	UPROPERTY(EditAnywhere)
-	float InputFloatA = 0;
-
-	UPROPERTY(EditAnywhere)
-	float InputFloatB = 0;
-
-	UPROPERTY(EditAnywhere)
-	float APlusBFloat = 0;
+	float Z = 0;
 };
