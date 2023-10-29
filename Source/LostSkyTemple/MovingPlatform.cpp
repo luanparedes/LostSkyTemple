@@ -18,6 +18,8 @@ void AMovingPlatform::BeginPlay()
 	MyVector.X = X;
 	MyVector.Y = Y;
 	MyVector.Z = Z;
+
+	SetActorLocation(FVector(-2997.833201 + 200, -1629.706904, 104.512420 + 200));
 }
 
 // Called every frame
