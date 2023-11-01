@@ -4,34 +4,35 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MovingPlatform.generated.h"
+#include "AIslands.generated.h"
 
 UCLASS()
-class LOSTSKYTEMPLE_API AMovingPlatform : public AActor
+class LOSTSKYTEMPLE_API AAIslands : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AMovingPlatform();
+	AAIslands();
+
+	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditAnywhere)
+	FVector IslandPosition = FVector();
+
+	UPROPERTY(EditAnywhere)
+	FVector XYZspeed = FVector();
+
+	UPROPERTY(EditAnywhere)
+	float maxMoveZ = 0;
+
+	UPROPERTY(EditAnywhere)
+	float minMoveZ = 0;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	UPROPERTY(EditAnywhere)
-	FVector MyVector = FVector();
-
-	UPROPERTY(EditAnywhere)
-	int32 Yspeed = 0;
-
-	UPROPERTY(EditAnywhere)
-	int32 Xspeed = 0;
-
-	UPROPERTY(EditAnywhere)
-	int32 Zspeed = 0;
+private:	
+	bool isReverse = false;
 };
