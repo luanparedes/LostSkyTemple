@@ -20,9 +20,13 @@ public:
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	FVector XYZspeed = FVector();
 
+	UPROPERTY(VisibleAnywhere)
+	double DistanceMoved = 0;
+
 protected:
 	virtual void BeginPlay() override;
 
 private:
+	FVector StartLocation;
 	void GetInitialPositionValues();
 };
