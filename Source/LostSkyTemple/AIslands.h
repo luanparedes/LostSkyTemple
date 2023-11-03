@@ -17,7 +17,7 @@ public:
 	UPROPERTY(EditAnywhere)
 	FVector IslandPosition = FVector();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	FVector XYZspeed = FVector();
 
 protected:
