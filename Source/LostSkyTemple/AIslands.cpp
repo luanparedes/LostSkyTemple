@@ -20,11 +20,13 @@ void AAIslands::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
+	// Getting actor location
 	IslandPosition = GetActorLocation();
-	IslandPosition.X += XYZspeed.X;
-	IslandPosition.Y += XYZspeed.Y;
-	IslandPosition.Z += XYZspeed.Z;
 
+	// Setting actor movement velocity using DeltaTime that made equally works for every cpu.
+	IslandPosition += XYZspeed * DeltaTime;
+
+	// And setting the actor new location.
 	SetActorLocation(IslandPosition);
 }
 
