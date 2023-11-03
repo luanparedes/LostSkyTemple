@@ -31,10 +31,12 @@ void AAIslands::Tick(float DeltaTime)
 
 	float DistanceMoved = FVector::Dist(StartLocation, IslandPosition);
 
+	// This if statement is what do the magic to move back in the same that it goes forward.
 	if(DistanceMoved > MoveDistance)
 	{
+		StartLocation = StartLocation + XYZspeed.GetSafeNormal() * MoveDistance;
+		SetActorLocation(StartLocation);
 		XYZspeed = -XYZspeed;
-		StartLocation = IslandPosition;
 	}
 		
 }
