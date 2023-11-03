@@ -20,8 +20,8 @@ public:
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	FVector XYZspeed = FVector();
 
-	UPROPERTY(VisibleAnywhere)
-	double DistanceMoved = 0;
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	float MoveDistance = 100;
 
 protected:
 	virtual void BeginPlay() override;

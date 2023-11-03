@@ -29,7 +29,14 @@ void AAIslands::Tick(float DeltaTime)
 	// And setting the actor new location.
 	SetActorLocation(IslandPosition);
 
-	DistanceMoved = FVector::Dist(StartLocation, IslandPosition);
+	float DistanceMoved = FVector::Dist(StartLocation, IslandPosition);
+
+	if(DistanceMoved > MoveDistance)
+	{
+		XYZspeed = -XYZspeed;
+		StartLocation = IslandPosition;
+	}
+		
 }
 
 void AAIslands::GetInitialPositionValues(){
