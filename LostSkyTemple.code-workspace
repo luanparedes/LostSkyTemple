@@ -1,7 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "Source/LostSkyTemple"
+			"name": "LostSkyTemple",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "D:\\Program Files\\Epic Games\\UE_5.1"
 		}
 	],
 	"settings": {

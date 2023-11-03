@@ -27,11 +27,11 @@ public:
 	FVector MyVector = FVector();
 
 	UPROPERTY(EditAnywhere)
-	int Yspeed = 0;
+	int32 Yspeed = 0;
 
 	UPROPERTY(EditAnywhere)
-	int Xspeed = 0;
+	int32 Xspeed = 0;
 
 	UPROPERTY(EditAnywhere)
-	int Zspeed = 0;
+	int32 Zspeed = 0;
 };
