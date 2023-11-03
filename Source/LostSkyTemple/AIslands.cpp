@@ -5,7 +5,6 @@ AAIslands::AAIslands()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -13,29 +12,55 @@ void AAIslands::BeginPlay()
 {
 	Super::BeginPlay();
 
-	maxMoveZ += IslandPosition.Z;
-	minMoveZ = -minMoveZ - IslandPosition.Z;
+	getInitialPositionValues();
 }
 
 // Called every frame
 void AAIslands::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
+	if(IslandPosition.X >= maxMoveX)
+		isReverseX = true;
+	else if(IslandPosition.X <= minMoveX)
+		isReverseX = false;
+
+	if(IslandPosition.Y >= maxMoveY)
+		isReverseY = true;
+	else if(IslandPosition.Y <= minMoveY)
+		isReverseY = false;
 
 	if(IslandPosition.Z >= maxMoveZ)
-		isReverse = true;
+		isReverseZ = true;
 	else if(IslandPosition.Z <= minMoveZ)
-		isReverse = false;
+		isReverseZ = false; 
 
-	IslandPosition.X += XYZspeed.X;
-	IslandPosition.Y += XYZspeed.Y;
+	
+	if(!isReverseX)
+		IslandPosition.X += XYZspeed.X;
+	else
+		IslandPosition.X -= XYZspeed.X;
 
-	if(!isReverse)
+	if(!isReverseY)
+		IslandPosition.Y += XYZspeed.Y;
+	else
+		IslandPosition.Y -= XYZspeed.Y;
+
+	if(!isReverseZ)
 		IslandPosition.Z += XYZspeed.Z;
 	else
 		IslandPosition.Z -= XYZspeed.Z;
 
-
 	SetActorLocation(IslandPosition);
 }
 
+void AAIslands::getInitialPositionValues(){
+	maxMoveX += IslandPosition.X;
+	minMoveX = IslandPosition.X - minMoveX;
+
+	maxMoveY += IslandPosition.Y;
+	minMoveY = IslandPosition.Y - minMoveY;
+
+	maxMoveZ += IslandPosition.Z;
+	minMoveZ = IslandPosition.Z - minMoveZ;
+}

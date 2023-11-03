@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -12,7 +10,6 @@ class LOSTSKYTEMPLE_API AAIslands : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AAIslands();
 
 	virtual void Tick(float DeltaTime) override;
@@ -29,10 +26,25 @@ public:
 	UPROPERTY(EditAnywhere)
 	float minMoveZ = 0;
 
+	UPROPERTY(EditAnywhere)
+	float maxMoveX = 0;
+
+	UPROPERTY(EditAnywhere)
+	float minMoveX = 0;
+
+	UPROPERTY(EditAnywhere)
+	float maxMoveY = 0;
+
+	UPROPERTY(EditAnywhere)
+	float minMoveY = 0;
+
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-private:	
-	bool isReverse = false;
+private:
+	bool isReverseX;
+	bool isReverseY;
+	bool isReverseZ;
+
+	void getInitialPositionValues();
 };
