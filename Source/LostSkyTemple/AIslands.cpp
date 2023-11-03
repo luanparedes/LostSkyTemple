@@ -52,6 +52,14 @@ void AAIslands::Tick(float DeltaTime)
 		IslandPosition.Z -= XYZspeed.Z;
 
 	SetActorLocation(IslandPosition);
+
+	// Island moves forward
+		// Get island location
+		// Move using a limit
+	
+	// Island moves backward
+		// Get Island location
+		// Move using a limit
 }
 
 void AAIslands::getInitialPositionValues(){
