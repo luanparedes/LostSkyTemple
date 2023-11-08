@@ -19,7 +19,7 @@ void AAIslands::BeginPlay()
 void AAIslands::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
+
 	// Getting actor location
 	IslandPosition = GetActorLocation();
 
@@ -44,4 +44,6 @@ void AAIslands::Tick(float DeltaTime)
 void AAIslands::GetInitialPositionValues(){
 	StartLocation = GetActorLocation();
 	IslandPosition = GetActorLocation();
+
+	UE_LOG(LogTemp, Display, TEXT("Island started at location: %f"), GetActorLocation().X);
 }
