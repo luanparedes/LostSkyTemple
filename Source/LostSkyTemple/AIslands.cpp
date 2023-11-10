@@ -45,5 +45,10 @@ void AAIslands::GetInitialPositionValues(){
 	StartLocation = GetActorLocation();
 	IslandPosition = GetActorLocation();
 
-	UE_LOG(LogTemp, Display, TEXT("Island started at location: %f"), GetActorLocation().X);
+	FString log_text = "\nIsland name: " + this->GetName() + 
+					   "\nX position: " + FString::SanitizeFloat(GetActorLocation().X) +
+					   "\nY position: " + FString::SanitizeFloat(GetActorLocation().Y) +
+					   "\nZ position: " + FString::SanitizeFloat(GetActorLocation().Z);
+
+	UE_LOG(LogTemp, Display, TEXT("\n%s"), *log_text);
 }
