@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -12,7 +10,6 @@ class LOSTSKYTEMPLE_API AMovingPlatform : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AMovingPlatform();
 
 	virtual void Tick(float DeltaTime) override;
@@ -32,4 +29,6 @@ protected:
 private:
 	FVector StartLocation;
 	void GetInitialPositionValues();
+	void MovePlatform(float DeltaTime);
+	void RotatePlatform(float DeltaTime);
 };
