@@ -37,4 +37,7 @@ private:
 	void GetInitialPositionValues();
 	void MoveIsland(float DeltaTime);
 	void RotateIsland(float DeltaTime);
+
+	//A const method, it doesn't allow to modify some class property inside this method
+	FString FullLogMessage() const;
 };

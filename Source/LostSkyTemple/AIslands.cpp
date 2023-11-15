@@ -24,12 +24,7 @@ void AAIslands::GetInitialPositionValues(){
 	StartLocation = GetActorLocation();
 	IslandPosition = GetActorLocation();
 
-	FString log_text = "\nIsland name: " + this->GetName() + 
-					   "\nX position: " + FString::SanitizeFloat(GetActorLocation().X) +
-					   "\nY position: " + FString::SanitizeFloat(GetActorLocation().Y) +
-					   "\nZ position: " + FString::SanitizeFloat(GetActorLocation().Z);
-
-	UE_LOG(LogTemp, Display, TEXT("\n%s"), *log_text);
+	UE_LOG(LogTemp, Display, TEXT("\n%s"), *FullLogMessage());
 }
 
 void AAIslands::MoveIsland(float DeltaTime)
@@ -60,4 +55,15 @@ void AAIslands::RotateIsland(float DeltaTime)
 	IslandRotation += XYZRotationSpeed * DeltaTime;
 
 	SetActorRotation(IslandRotation);
+}
+
+//A const method, it doesn't allow to modify some class property inside this method
+FString AAIslands::FullLogMessage() const
+{
+	FString log_text = "\nIsland name: " + this->GetName() + 
+					"\nX position: " + FString::SanitizeFloat(GetActorLocation().X) +
+					"\nY position: " + FString::SanitizeFloat(GetActorLocation().Y) +
+					"\nZ position: " + FString::SanitizeFloat(GetActorLocation().Z);
+
+	return log_text;
 }
